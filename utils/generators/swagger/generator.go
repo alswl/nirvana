@@ -256,6 +256,7 @@ func (g *Generator) schemaForStruct(typ *api.Type) *spec.Schema {
 
 	schema = &spec.Schema{}
 	schema.Title = ref.Title
+	schema.Type = []string{"object"}
 	for _, field := range typ.Fields {
 		jsontag := strings.TrimSpace(field.Tag.Get("json"))
 		if jsontag == "-" {
